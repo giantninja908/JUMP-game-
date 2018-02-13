@@ -8,15 +8,14 @@
         background-image: "http://3.bp.blogspot.com/-mn8MCNMR73g/USvOqbJODBI/AAAAAAAAFHM/f_VF2HIeQdU/s1600/blue_sky_and_green_grass-wide.jpg";
       }
     </style>
-    <img src="http://i.dailymail.co.uk/i/pix/2011/03/24/article-1369452-0B510B7A00000578-920_636x288.jpg" id="jet" width="0" height = "0"/>
+    <img src="http://freepngimages.com/wp-content/uploads/2015/05/tornado-jet-plane.png" id="jet" width="0" height = "0"/>
     <img src="http://bossfight.co/wp-content/uploads/2015/09/boss-fight-free-high-quality-stock-images-photos-photography-windmills-clear-sky.jpg" id="back" width="0" height = "0"/>
   </head>
-	RESET BUTTON DOESN'T WORK
   <body onload="startGame()">
     <script>
     function reset(){
       	
-        num = 10
+        num = 7
         myGameArea.clear()
         myGameArea.frameNo = 0
         myGameArea.interval = setInterval(updateGameArea, 20)
@@ -178,8 +177,5 @@
         }
       },1000/60)
     </script>
-    <br>
-    <button onmousedown="reset()">RESET</button>
-    <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">JUMP</button>
   </body> 
 </html>  
