@@ -9,7 +9,7 @@
       }
     </style>
     <img src="http://freepngimages.com/wp-content/uploads/2015/05/tornado-jet-plane.png" id="jet" width="0" height = "0"/>
-    <img src="https://specials-images.forbesimg.com/dam/imageserve/765877054/960x0.jpg?fit=scale" id="back" width="0" height = "0"/>
+    <img src="http://bossfight.co/wp-content/uploads/2015/09/boss-fight-free-high-quality-stock-images-photos-photography-windmills-clear-sky.jpg" id="back" width="0" height = "0"/>
   </head>
   <body onload="startGame()">
     <script>
@@ -24,7 +24,22 @@
         myGamePiece.y = 120
         myGamePiece.gravity = 1
       }
-	    
+	    var arrow_keys_handler = function(e) {
+    e = e || window.event
+    switch (e.keyCode) {
+        case 37:
+        case 39:
+        case 38:
+        case 40: // Arrow keys
+        case 32:
+            e.preventDefault();
+            break; // Space
+        default:
+            break; // do not block other keys
+    }
+};
+window.addEventListener("keydown", arrow_keys_handler, false);
+
       var click = false
       var weapon = []
     var space = false
@@ -147,15 +162,19 @@
           myObstacles.push(new component(10, height, "orange", x, 0));
           myObstacles.push(new component(10, x - height - gap, "purple", x, height + gap));
         }
+	      
         for (i = 0; i < myObstacles.length; i += 1) {
+		/**
 		for( var v = 0; v< weapon.length;i++){
 		if(myObstacles[i].crashWith(weapon[v])){
 			alert("ok")
 		}
 			}
+			**/
           myObstacles[i].x += -1*num;
           myObstacles[i].update();
         }
+	
         for (i = 0; i < weapon.length; i += 1) {
           weapon[i].x += 1*num;
           weapon[i].update();
