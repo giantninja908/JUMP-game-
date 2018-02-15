@@ -8,13 +8,13 @@
       }
     </style>
     <img src="http://freepngimages.com/wp-content/uploads/2015/05/tornado-jet-plane.png" id="jet" width="0" height = "0"/>
-    <img src="http://d3ne5s9fv9p81l.cloudfront.net/84/a6/279/984/0f5a7ebfdb4ec2923658a3.jpg" width="0" height = "0" id="back"/>
+    <img src="https://breathelighter.files.wordpress.com/2013/06/morro-rock-from-cayucos.jpg" width="0" height = "0" id="back"/>
   </head>
   <body onload="startGame()">
     <script>
     function reset(){
       	
-        num = 19
+        num = 16
         myGameArea.clear()
         myGameArea.frameNo = 0
         myGameArea.interval = setInterval(updateGameArea, 20)
@@ -50,7 +50,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         myGamePiece = new component(40, 30,jet, 15, 120,"image");
         myGamePiece.gravity = 0.05;
 	     myBackground = new component(window.innerWidth, window.innerHeight, document.getElementById("back"), 0, 0, "image");   
-        myScore = new component("20px", "Consolas", "blue", 270, 30, "text");
+        myScore = new component("30px", "Consolas", "blue", 280, 40, "text");
         myGameArea.start();
       }
       var myGameArea = {
@@ -191,7 +191,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         }
       },1000/60)
     </script>
-  </body> 
+  </body>  
 </html> 
 
 
