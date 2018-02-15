@@ -171,7 +171,8 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         for (i = 0; i < myObstacles.length; i += 1) {
 		for(var v = 0; v<weapon.length;v++){
 			myObstacles[i].life -= 1
-			if(myObstacles[i].crashWith(weapon[v]) && myObstacles[i].life <= 1){
+			if(myObstacles[i].crashWith(weapon[v])){
+				alert(myObstacles[i].life)
 				myObstacles[i].y -= 1000000
 			}
 		}
