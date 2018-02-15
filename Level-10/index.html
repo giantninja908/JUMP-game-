@@ -24,6 +24,7 @@
         myGamePiece.y = 120
         myGamePiece.gravity = 1
       }
+	    
       var click = false
       var weapon = []
     var space = false
@@ -113,6 +114,7 @@
         	myGamePiece.y = 0
             
         }
+	    
 	      if(click == true){
 	      	weapon[weapon.length] = new component(20,5,"blue",myGamePiece.x,myGamePiece.y)
 	      }
@@ -146,6 +148,11 @@
           myObstacles.push(new component(10, x - height - gap, "purple", x, height + gap));
         }
         for (i = 0; i < myObstacles.length; i += 1) {
+		for( var v = 0; v< weapon.length;i++){
+		if(myObstacles[i].crashWidth(weapon[v])){
+			myObstacles[i].y -= 100000
+		}
+			}
           myObstacles[i].x += -1*num;
           myObstacles[i].update();
         }
