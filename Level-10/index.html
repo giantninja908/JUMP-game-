@@ -71,7 +71,8 @@ window.addEventListener("keydown", arrow_keys_handler, false);
           this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         }
       }
-      function component(width, height, color, x, y, type) {
+      function component(width, height, color, x, y, type, life) {
+	this.life = life;
         this.type = type;
         this.score = 0;
         this.width = width;
@@ -159,16 +160,20 @@ window.addEventListener("keydown", arrow_keys_handler, false);
           minGap = 70;
           maxGap = 300;
           gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-          myObstacles.push(new component(10, height, "orange", x, 0));
-          myObstacles.push(new component(10, x - height - gap, "purple", x, height + gap));
+		
+          myObstacles.push(new component(10, height, "orange", x, 0,"",Math.floor(Math.random*(20-5+1)+5)));
+          myObstacles.push(new component(10, x - height - gap, "purple", x, height + gap,"",Math.floor(Math.random*(20-5+1)+5)));
+		
         }
 	      
         for (i = 0; i < myObstacles.length; i += 1) {
 		for(var v = 0; v<weapon.length;v++){
-			if(myObstacles[i].crashWith(weapon[v])){
+			myObstacles[i].life -= 1
+			if(myObstacles[i].crashWith(weapon[v]) && myObstacles[i].life <= 0){
 				myObstacles[i].y -= 1000000
 			}
 		}
+		
           myObstacles[i].x += -1*num;
           myObstacles[i].update();
         }
