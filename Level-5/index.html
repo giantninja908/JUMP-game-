@@ -14,7 +14,7 @@
     <script>
     function reset(){
       	
-        num = 16
+        num = 19
         myGameArea.clear()
         myGameArea.frameNo = 0
         myGameArea.interval = setInterval(updateGameArea, 20)
@@ -50,7 +50,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         myGamePiece = new component(40, 30,jet, 15, 120,"image");
         myGamePiece.gravity = 0.05;
 	     myBackground = new component(window.innerWidth, window.innerHeight, document.getElementById("back"), 0, 0, "image");   
-        myScore = new component("30px", "Consolas", "blue", 280, 40, "text");
+        myScore = new component("20px", "Consolas", "blue", 270, 30, "text");
         myGameArea.start();
       }
       var myGameArea = {
