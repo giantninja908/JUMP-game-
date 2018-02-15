@@ -164,13 +164,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         }
 	      
         for (i = 0; i < myObstacles.length; i += 1) {
-		/**
-		for( var v = 0; v< weapon.length;i++){
-		if(myObstacles[i].crashWith(weapon[v])){
-			alert("ok")
-		}
-			}
-			**/
+		
           myObstacles[i].x += -1*num;
           myObstacles[i].update();
         }
