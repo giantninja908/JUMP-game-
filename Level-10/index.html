@@ -162,7 +162,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
           minGap = 70;
           maxGap = 300;
           gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-	var randOm = Math.floor(Math.random*(1-1+1)+1)
+	var randOm = Math.floor(Math.random*(2-2+1)+2)
           myObstacles.push(new component(10, height, "orange", x, 0,"",randOm));
           myObstacles.push(new component(10, x - height - gap, "red", x, height + gap,"",randOm));
 		
