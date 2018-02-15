@@ -72,7 +72,9 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         }
       }
       function component(width, height, color, x, y, type, life) {
-	this.life = life;
+	if(type == ""){
+		this.life = life;
+	}
         this.type = type;
         this.score = 0;
         this.width = width;
