@@ -25,6 +25,7 @@
         myGamePiece.gravity = 1
       }
       var click = false
+      var weapon = []
     var space = false
     var num = 11
 	var time = 0
@@ -112,6 +113,9 @@
         	myGamePiece.y = 0
             
         }
+	      if(click == true){
+	      	weapon[weapon.length] = new component(20,5,"blue",myGamePiece.x,myGamePiece.y)
+	      }
         var x, height, gap, minHeight, maxHeight, minGap, maxGap;
         for (i = 0; i < myObstacles.length; i += 1) {
           if (myGamePiece.crashWith(myObstacles[i])) {
@@ -145,7 +149,10 @@
           myObstacles[i].x += -1*num;
           myObstacles[i].update();
         }
-        
+        for (i = 0; i < weapon.length; i += 1) {
+          weapon[i].x += 1*num;
+          weapon[i].update();
+        }
         myScore.text="SCORE: " + myGameArea.frameNo;
         myScore.update();
         myGamePiece.newPos();
