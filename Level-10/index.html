@@ -136,7 +136,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
 	      if(click == true){
 	      	weapon[weapon.length] = new component(20,5,"blue",myGamePiece.x,myGamePiece.y)
 	      }
-        var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+        var x, height, gap, minHeight, maxHeight, minGap, maxGap, randOm, v;
         for (i = 0; i < myObstacles.length; i += 1) {
           if (myGamePiece.crashWith(myObstacles[i])) {
             clearInterval(myGameArea.interval)
@@ -162,15 +162,14 @@ window.addEventListener("keydown", arrow_keys_handler, false);
           minGap = 70;
           maxGap = 300;
           gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-	var randOm = Math.floor(Math.random*(2-2+1)+2)
+	  randOm = Math.floor(Math.random*(2-2+1)+2)
           myObstacles.push(new component(10, height, "orange", x, 0,"",randOm));
           myObstacles.push(new component(10, x - height - gap, "red", x, height + gap,"",randOm));
 		
         }
 	      
         for (i = 0; i < myObstacles.length; i += 1) {
-		for(var v = 0; v<weapon.length;v++){
-			myObstacles[i].life -= 1
+		for(v = 0; v<weapon.length;v++){
 			if(myObstacles[i].crashWith(weapon[v])){
 				alert(myObstacles[i].life)
 				myObstacles[i].y -= 1000000
