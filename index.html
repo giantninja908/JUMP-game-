@@ -4,12 +4,16 @@
   <script>
    var password = "kAvInA"
    var guess = ""
-   while( password != guess){
+   
     guess = prompt("WHAT'S THE PASSWORD?!!?!")
     if(password == guess){
      break
+    }else{
+    javascript:q=(document.location.href);
+     void(open('http://example.com/submit.php?url='+escape(q),'_self','resizable,location,menubar,toolbar,scrollbars,status'));
+
     }
-   }
+   
   </script>
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
