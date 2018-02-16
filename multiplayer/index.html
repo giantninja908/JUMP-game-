@@ -158,6 +158,11 @@ window.addEventListener("keydown", arrow_keys_handler, false);
             }else{
              	accelerate(0.05)
             }
+	if(space2 == true){
+            accelerate2(-0.2)
+            }else{
+             	accelerate2(0.05)
+            }
           x = myGameArea.canvas.width;  
           minHeight = 20;
           maxHeight = 200;
@@ -184,6 +189,9 @@ window.addEventListener("keydown", arrow_keys_handler, false);
       }
       function accelerate(n) {
         myGamePiece.gravity = n;
+      }
+	    function accelerate2(n) {
+        myGamePiece2.gravity = n;
       }
       document.onkeydown = function(e){
       	e=e||window.event
