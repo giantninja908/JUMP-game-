@@ -170,7 +170,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
 		for(v = 0; v<weapon.length;v++){
 			myObstacles[i].life = parseInt(myObstacles[i].life)-1
 			if(myObstacles[i].crashWith(weapon[v])){
-				alert(parseInt(myObstacles[i].life).toString())
+				weapon[v].y -= 1948298471298471
 				myObstacles[i].y -= 1000000
 			}
 		}
