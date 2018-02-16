@@ -137,18 +137,20 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         var x, height, gap, minHeight, maxHeight, minGap, maxGap;
         for (i = 0; i < myObstacles.length; i += 1) {
           if (myGamePiece.crashWith(myObstacles[i])) {
+		  alert("player 2 wins")
             clearInterval(myGameArea.interval)
           } 
         }
         for (i = 0; i < myObstacles.length; i += 1) {
           if (myGamePiece2.crashWith(myObstacles[i])) {
+		  alert("player 1 wins")
             clearInterval(myGameArea.interval)
           } 
         }
         myGameArea.clear();
         myBackground.update()
         myGameArea.frameNo += 1;
-        if (myGameArea.frameNo == 1 || everyinterval(-1)) {
+        if (myGameArea.frameNo == 1 || everyinterval(150)) {
         	time++
             if(time% 1== 0){
             	num+=.01
