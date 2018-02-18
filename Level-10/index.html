@@ -130,7 +130,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         	myGamePiece.y = 0
             
         }
-	    
+	    time++
 	      if(click == true && time % 20 == 0){
 	      	weapon[weapon.length] = new component(20,5,"blue",myGamePiece.x,myGamePiece.y)
 	      }
@@ -144,7 +144,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         myBackground.update()
         myGameArea.frameNo += 1;
         if (myGameArea.frameNo == 1 || everyinterval(150)) {
-        	time++
+        	
             if(time% 1== 0){
             	num+=.01
             }
