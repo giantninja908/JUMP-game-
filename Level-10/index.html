@@ -132,7 +132,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
             
         }
 	    time++
-	      if(click == true && time % 2 == 0){
+	      if(click == true && time % 4 == 0){
 	      	weapon[weapon.length] = new component(20,5,"blue",myGamePiece.x,myGamePiece.y)
 	      }
         var x, height, gap, minHeight, maxHeight, minGap, maxGap, randOm, v;
@@ -147,7 +147,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         if (myGameArea.frameNo == 1 || everyinterval(150)) {
         	
             if(time% 5== 0){
-            	num+=.1
+            	num+=.5
             }
             if(space == true){
             accelerate(-0.2)
