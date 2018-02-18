@@ -71,8 +71,9 @@ window.addEventListener("keydown", arrow_keys_handler, false);
           this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         }
       }
+      //10, height, "orange", x, 0,"",randOm
       function component(width, height, color, x, y, type, life) {
-	this.life = parseInt(life);
+	this.life = life;
         this.type = type;
         this.score = 0;
         this.width = width;
@@ -160,7 +161,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
           minGap = 70;
           maxGap = 300;
           gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-	  randOm = parseInt(Math.floor(Math.random*(2-2+1)+2))
+	  randOm = Math.floor(Math.random*(2-2+1)+2)
 		console.log(randOm)
           myObstacles.push(new component(10, height, "orange", x, 0,"",randOm));
           myObstacles.push(new component(10, x - height - gap, "red", x, height + gap,"",randOm));
