@@ -132,7 +132,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
             
         }
 	    time++
-	      if(click == true && time % 20 == 0){
+	      if(click == true && time % 10 == 0){
 	      	weapon[weapon.length] = new component(20,5,"blue",myGamePiece.x,myGamePiece.y)
 	      }
         var x, height, gap, minHeight, maxHeight, minGap, maxGap, randOm, v;
@@ -162,7 +162,6 @@ window.addEventListener("keydown", arrow_keys_handler, false);
           maxGap = 300;
           gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
 	  randOm = 20
-		console.log(randOm)
           myObstacles.push(new component(10, height, "orange", x, 0,"",randOm));
           myObstacles.push(new component(10, x - height - gap, "red", x, height + gap,"",randOm));
 		
@@ -170,11 +169,14 @@ window.addEventListener("keydown", arrow_keys_handler, false);
 	      
         for (i = 0; i < myObstacles.length; i += 1) {
 		for(v = 0; v<weapon.length;v++){
-			console.log(myObstacles[i].life)
 			
 			if(myObstacles[i].crashWith(weapon[v])){
 				weapon[v].y -= 1948298471298471
+				myObstacles[i].life -= 1
+				if(myObstacles[i].life <= 0){
+				
 				myObstacles[i].y -= 1000000
+				}
 			}
 		}
 		
