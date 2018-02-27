@@ -51,7 +51,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
       var jet = document.getElementById("jet")
       function startGame() {
         myGamePiece = new component(40, 30,jet, 15, 120,"image");
-        myGamePiece.gravity = 0.05;
+        myGamePiece.gravity = 1;
 	     myBackground = new component(window.innerWidth, window.innerHeight, document.getElementById("back"), 0, 0, "image");   
         myScore = new component("30px", "Consolas", "blue", 280, 40, "text");
         myGameArea.start();
