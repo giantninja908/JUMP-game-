@@ -146,7 +146,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
           } 
         }
 	      if(bomb.crashWith(myGamePiece)){
-	      	
+	      	clearInterval(myGameArea.interval)
 	      }
         myGameArea.clear();
         myBackground.update()
