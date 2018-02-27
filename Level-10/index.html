@@ -54,7 +54,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
       var myScore;
       var jet = document.getElementById("jet")
       function startGame() {
-	bomb = new component(30,30,document.getElementById("bomb"),myGameArea.canvas.width,120,"image")
+	bomb = new component(30,30,document.getElementById("bomb"),myGameArea.canvas.width,myGameArea.canvas.width,"image")
         myGamePiece = new component(40, 30,jet, 15, 120,"image");
         myGamePiece.gravity = 0;
 	     myBackground = new component(window.innerWidth, window.innerHeight, document.getElementById("back"), 0, 0, "image");   
