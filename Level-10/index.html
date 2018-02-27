@@ -54,7 +54,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
       var myScore;
       var jet = document.getElementById("jet")
       function startGame() {
-	bomb = new component(30,30,document.getElementById("bomb"),490,120,"image")
+	bomb = new component(30,30,document.getElementById("bomb"),myGameArea.width,120,"image")
         myGamePiece = new component(40, 30,jet, 15, 120,"image");
         myGamePiece.gravity = 0;
 	     myBackground = new component(window.innerWidth, window.innerHeight, document.getElementById("back"), 0, 0, "image");   
@@ -193,7 +193,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
 	bomb.x += -2*num
 	      bomb.y-=2
 	      if(bomb.x<0){
-	      	bomb = new component(30,30,document.getElementById("bomb"),490,Math.floor(Math.random()*(myGameArea.canvas.height-1+1)+1),"image")
+	      	bomb = new component(30,30,document.getElementById("bomb"),myGameArea.width,Math.floor(Math.random()*(myGameArea.canvas.height-1+1)+1),"image")
 	      }
         for (i = 0; i < weapon.length; i += 1) {
           weapon[i].x += 1*num;
