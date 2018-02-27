@@ -2,6 +2,7 @@
  <html>
  <head>
   <title>Jump Game</title>
+  
   <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/en/0/0a/Flappy_Bird_icon.png" type="image/png">
   <!--
   <script>
@@ -130,6 +131,7 @@
  <p>Hover over the "Single Player Tab,"and enjoy the levels! </p>
   <h2>How to play</h2>
   <p>use the spacebar to fly! For multiplayer, player 2, use the "UP" arrow key.</p>
+  <p id="file"/>
   <p>Sample game below</p>
   <iframe src="https://b0mbers.github.io/JUMP-game-/Level-1/" height="500" width="100%"></iframe>
   <h1>NEWS!!</h1>
@@ -141,5 +143,22 @@
   <p>We are reqiring a pixel artist for a new game, please fill out the apllication form for more details!</p>
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdmf8pXeQAzfKzNuIe2-267Vsr-f9l046TSnUCMVVhaM6N8TQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
   </center>
+  <script>
+
+/// read from file
+
+var txtFile = "ranking.txt"
+var file = new File(txtFile);
+
+file.open("r"); // open file with read access
+var str = "";
+while (!file.eof) {
+	// read each line of text
+	str += file.readln() + "\n";
+}
+file.close();
+document.getElementById("file").innerHTML="The high score on level 10 is "+str;
+
+  </script>
  </body>
  </html>
