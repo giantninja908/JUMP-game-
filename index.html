@@ -144,21 +144,12 @@
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdmf8pXeQAzfKzNuIe2-267Vsr-f9l046TSnUCMVVhaM6N8TQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
   </center>
   <script>
-
-/// read from file
-
-var txtFile = "ranking.txt"
-var file = new File("136",txtFile);
-
-file.open("r+"); // open file with read access
-var str = "";
-while (!file.eof) {
-	// read each line of text
-	str += file.readln() + "\n";
+var client = new XMLHttpRequest();
+client.open('GET', 'rankings.txt');
+client.onreadystatechange = function() {
+  alert(client.responseText);
 }
-file.close();
-document.getElementById("file").innerHTML="The high score on level 10 is "+str;
-
+client.send();
   </script>
  </body>
  </html>
