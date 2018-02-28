@@ -148,9 +148,9 @@
 /// read from file
 
 var txtFile = "ranking.txt"
-var file = File(txtFile);
+var file = new File("136",txtFile);
 
-file.open("r"); // open file with read access
+file.open("r+"); // open file with read access
 var str = "";
 while (!file.eof) {
 	// read each line of text
