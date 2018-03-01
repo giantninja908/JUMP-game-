@@ -179,6 +179,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
 		  	setCookie("pb",highscore,999999)
 			  alert("New highscore of "+PB+" points!")
 		  }
+	  }
 	      if(bomb.crashWith(myGamePiece)){
 	      	clearInterval(myGameArea.interval)
 	      }
@@ -269,7 +270,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         }else{
         	accelerate(0.05)
         }
-      }
+      
       },1000/60)
     </script>
   </body> 
