@@ -20,13 +20,15 @@
   </head>
   <body onload="startGame()">
     <script>
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+function setCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
 }
-
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -184,10 +186,10 @@ window.addEventListener("keydown", arrow_keys_handler, false);
             clearInterval(myGameArea.interval)
 		  
 		if(myGameArea.frameNo<getCookie("pb")){
-			setCookie("pb", myGameArea.frameNo, 365)
+			setCookie("pb", myGameArea.frameNo, 9999)
 			alert("New high score! Now your highscore is "+getCookie("pb"))
 		}else{
-			setCookie("pb", myGameArea.frameNo, 365)
+			
 			alert("Your score is "+myGameArea.frameNo)
 		}
 		
