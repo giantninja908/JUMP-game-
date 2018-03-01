@@ -198,7 +198,8 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         }
 	      if(bomb.crashWith(myGamePiece)){
 	      	clearInterval(myGameArea.interval)
-		      if(myGameArea.frameNo<getCookie("pb")){
+		      var highscore = getCookie("pb")
+		      if(myGameArea.frameNo<highscore){
 			setCookie("pb", myGameArea.frameNo, 9999)
 			alert("New high score! Now your highscore is "+getCookie("pb"))
 		}else{
