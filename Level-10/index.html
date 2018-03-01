@@ -20,6 +20,41 @@
   </head>
   <body onload="startGame()">
     <script>
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie(cookie) {
+    var pb = getCookie(cookie);
+    if (pb != "") {
+        return true
+    } else {
+        return false
+    }
+}
+	    if(checkCookie("pb")==false){
+	    	var high = false
+	    }else{
+	    	var high = true
+	    }
     function reset(){
       	
         num = 33
@@ -147,6 +182,16 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         for (i = 0; i < myObstacles.length; i += 1) {
           if (myGamePiece.crashWith(myObstacles[i])) {
             clearInterval(myGameArea.interval)
+		  
+		if(myGameArea.frameNo<getCookie("pb")&&high==true){
+			setCookie("pb", myGameArea.frameNo, 365)
+			alert("New high score! Now your highscore is "+getCookie("pb"))
+		}else{
+			setCookie("pb", myGameArea.frameNo, 365)
+			alert("Your score is "+myGameArea.frameNo)
+		}
+		
+		  myGamePiece.y -= 1492712984712
           } 
         }
 	      if(bomb.crashWith(myGamePiece)){
