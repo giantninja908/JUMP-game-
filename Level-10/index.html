@@ -196,6 +196,15 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         }
 	      if(bomb.crashWith(myGamePiece)){
 	      	clearInterval(myGameArea.interval)
+		      if(myGameArea.frameNo<getCookie("pb")){
+			setCookie("pb", myGameArea.frameNo, 365)
+			alert("New high score! Now your highscore is "+getCookie("pb"))
+		}else{
+			setCookie("pb", myGameArea.frameNo, 365)
+			alert("Your score is "+myGameArea.frameNo)
+		}
+		
+		  myGamePiece.y -= 1492712984712
 	      }
         myGameArea.clear();
         myBackground.update()
