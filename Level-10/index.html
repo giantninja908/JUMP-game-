@@ -183,7 +183,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
           if (myGamePiece.crashWith(myObstacles[i])) {
             clearInterval(myGameArea.interval)
 		  
-		if(myGameArea.frameNo<getCookie("pb")&&high==true){
+		if(myGameArea.frameNo<getCookie("pb")){
 			setCookie("pb", myGameArea.frameNo, 365)
 			alert("New high score! Now your highscore is "+getCookie("pb"))
 		}else{
