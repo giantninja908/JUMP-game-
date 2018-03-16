@@ -132,6 +132,8 @@ window.addEventListener("keydown", arrow_keys_handler, false);
         for (i = 0; i < myObstacles.length; i += 1) {
           if (myGamePiece.crashWith(myObstacles[i])) {
             clearInterval(myGameArea.interval)
+		  var audio = new Audio('/JUMP-game-/derp.mp3');
+audio.play();
           } 
         }
         myGameArea.clear();
