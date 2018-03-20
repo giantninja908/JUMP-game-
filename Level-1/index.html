@@ -133,7 +133,7 @@ window.addEventListener("keydown", arrow_keys_handler, false);
           if (myGamePiece.crashWith(myObstacles[i])) {
             clearInterval(myGameArea.interval)
 		  var audio = new Audio('/JUMP-game-/derp.mp3');
-		  audio.playbackRate = 2.5
+		  audio.playbackRate = 1.5
 		  audio.addEventListener('ended', function() {
     this.currentTime = 0;
     this.play();
