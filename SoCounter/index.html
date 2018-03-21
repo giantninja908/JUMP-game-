@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<center>
+<p>Click button to count up the "so" counter</p>
+<h1 id="so">0</h1>
+<button id="button">CLICK FOR +1 "SO"</button>
+<p/>
+<button id="button2">CLICK FOR RESET</button>
+</center>
+<script>
+var num = 0
+var button = document.getElementById("button")
+var button2 = document.getElementById("button2")
+var so = document.getElementById("so")
+button.onclick=function(){
+num++
+	so.innerHTML = num.toString()
+}
+button2.onclick=function(){
+num = 0
+	so.innerHTML = num.toString()
+}
+</script>
+</body>
+</html>
